@@ -3,6 +3,7 @@
 150119842 - Ahmet Kerem AKPINAR
 150115065 - Abdülkadir ASLAN
 150118029 - Rumeysa ULUSOY
+
 """
 path = "input.txt"
 # reading file
@@ -106,18 +107,20 @@ print("v2.0 raw")
 # print hexadecimal form of input.txt file according to our ISA structure
 for i in range(0, len(inputFileArr)):
     if inputFileArr[i][0] == opcode_list[0][0]:  # AND
-        binary = opcode_list[0][1] + binary_con(i)[:4] + "00" + binary_con(i)[4:]
+        binary = opcode_list[0][1] + binary_con(i)[0:8] + "00" +binary_con(i)[8:]
         # print(inputFileArr[i])
-        # print(binary)
+        print(binary_con(i)[:])
+        print(binary)
         print(bin_hex(binary))
     elif inputFileArr[i][0] == opcode_list[1][0]:  # OR
-        binary = opcode_list[1][1] + binary_con(i)[:4] + "00" + binary_con(i)[4:]
+        binary = opcode_list[1][1] + binary_con(i)[0:8] + "00" + binary_con(i)[8:]
+        print(binary)
         print(bin_hex(binary))
     elif inputFileArr[i][0] == opcode_list[2][0]:  # ADD
-        binary = opcode_list[2][1] + binary_con(i)[:4] + "00" + binary_con(i)[4:]
+        binary = opcode_list[2][1] + binary_con(i)[0:8] + "00" + binary_con(i)[8:]
         print(bin_hex(binary))
     elif inputFileArr[i][0] == opcode_list[3][0]:  # XOR
-        binary = opcode_list[3][1] + binary_con(i)[:4] + "00" + binary_con(i)[4:]
+        binary = opcode_list[3][1] + binary_con(i)[0:8] + "00" + binary_con(i)[8:]
         print(bin_hex(binary))
     elif inputFileArr[i][0] == opcode_list[4][0]:  # ANDI
         binary = opcode_list[4][1] + binary_con(i)
